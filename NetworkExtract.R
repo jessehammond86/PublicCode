@@ -21,7 +21,7 @@
 NetworkExtract <- function(
   in_data
   , tie_weights = 'raw'
-  , ties_normalize = 'state'
+  , ties_normalize = F
   , exclude_codes = NULL
   , time_window = 'month'
 ){
@@ -60,7 +60,7 @@ NetworkExtract <- function(
     ## Create array to hold event network matrices
     thismonth_events <- events_array
 
-    for(this_code in n_codes){
+    for(this_code in 1:n_codes){
 
       ## Extract single event network
       events_tsna <- in_data[[this_code]]
@@ -101,8 +101,9 @@ NetworkExtract <- function(
 
     ## Store fully populated array in array list by date
     interactions[[this_date]] <- thismonth_events
-    names(interactions) <- dates
+
 
   }
+  names(interactions) <- dates
   return(interactions)
 }
