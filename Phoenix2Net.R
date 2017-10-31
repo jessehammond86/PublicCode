@@ -189,7 +189,7 @@ Phoenix2Net <- function(start_date, end_date
   ## Subset events: if a subset of EVENTCODES are specified, keep only that
   ##  set of events and aggregate up from there.
   if(!any('all' %in% code_subset)){
-    input_data <- input_data[eventcode %in% code_subset]
+    input_data <- input_data[quad_class %in% code_subset]
   }
 
 
