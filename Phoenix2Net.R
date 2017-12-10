@@ -202,7 +202,7 @@ Phoenix2Net <- function(start_date, end_date
   input_data[source_root %in%  statelist
                & source_agent == ''
                , source_agent := 'GOV']
-  input_data[target %in%  statelist
+  input_data[target_root %in%  statelist
                & target_agent == ''
                , target_agent := 'GOV']
 
